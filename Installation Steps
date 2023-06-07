@@ -1,0 +1,48 @@
+Working with a local Hybris setup is advantageous for development purposes. However, setting up and running Hybris on a Windows environment can be time-consuming, 
+particularly when performing a clean build that takes more than 20 minutes. To expedite the process, an alternative approach is to enable WSL (Windows Subsystem for Linux), 
+which allows for a faster environment of Hybris on your system.
+
+Here is a simplified guide on setting up Hybris using WSL (Windows Subsystem for Linux): 
+   
+  1.Install WSL Application in your system.
+   
+Ubuntu is a commonly used Linux distribution for setting up Hybris in WSL. However, if desired, you have the flexibility to choose and use a different Linux distribution based on your preferences and requirements.
+
+  2.Use this command "wsl --install -d UBUNTU-VERSION" to install Ubuntu.
+
+Now you can observe Ubuntu running on your system.
+
+  3.Download and extract the Java and Apache Maven files into the home directory of your Ubuntu system.
+   
+  4.Specify the paths for the Java_HOME and MAVEN_HOME variables in the bashrc file.
+        Through Commands 
+            --> nano ~/. bashrc (open the bashrc file)
+            --> source ~/. bashrc (Save/reload the bashrc file)
+            
+  5.Verify that the chmod and chown permissions for Maven and Java are set correctly.
+( Ensure that the owner of the Maven and Java files is set to the user, and the user has full access permissions )
+
+------------------keygen--------------------------
+  
+  6.Download the Hybris ZIP folders and extract them, make sure that the owner is set to the user and granting the user full access permissions.
+  
+  7.Execute the "ant clean all" command to initiate the building process of the default files.
+
+  8.--------ojdbc-----------download and place it in right place
+
+  9.If the execution of the ant clean all command fails, it may be necessary to set the interpod property to false. For more detailed instructions and troubleshooting, you can refer to relevant online resources.
+  
+  10.To generate the default files, execute the command ant clean all. This command will initiate the cleaning process and then rebuild the project, resulting in the generation of the default files.
+ 
+  11.Download the "local.properties" and "mylocal.properties" files, and then place them in their respective relevant locations.
+  
+  12.Delete the unwanted default files such as README, Server.xml, and Web.xml from the relevant directories.
+
+  13.Verify that the database is properly configured in the property files, ensuring that the necessary settings such as the database URL, username, password, and 
+  other relevant parameters are correctly specified.
+  
+  14.You can now initiate the server startup process.
+
+
+
+
